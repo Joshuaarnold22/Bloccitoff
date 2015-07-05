@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'annotate'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'devise'
