@@ -8,9 +8,3 @@
 
 users = User.all
 
-50.times do
-  Item.create(
-    name: Faker::Lorem.sentence,
-    user: users.sample
-  )
-end
