@@ -12,6 +12,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update_attributes(params.require(:item).permit(:name))
+       flash[:notice] = "Item was updated."
+       redirect_to current_user
+     else
+       flash[:error] = "There was an error saving the item. Please try again."
+       render :edit
+     end
   end
 
   def create

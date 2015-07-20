@@ -1,6 +1,7 @@
 <% if @user %>
+<div class="container">
   <h2 class="media-heading">A Checklist for <%= @user.name %></h2>
-  <div class="well">
+  <!-- <div class="well"> -->
       <ul class="list-group checked-list-box">
         <% @items.each do |item| %>
           <%= render partial: 'items/item', locals: { item: item } %>
@@ -8,18 +9,21 @@
         <%= render partial: 'items/form', locals: { item: current_user.items.build, user: @user } %>
       </ul>
     <div class='js-items-count'><%= pluralize(@user.items.count, 'item') %></div>
-  </div>
+  <!-- </div> -->
+</div>
 <% else %>
   <br>
-  <div class="jumbotron">
-    <h1>BloccitOff</h1>
-    <p>BloccitOff is a self destructing checklist for all your todo's!</p>
-    <p>
-        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
-        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
-    </p>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>BloccitOff</h1>
+        <p>BloccitOff is a self destructing checklist for all your todo's!</p>
+        <p>
+          <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+          <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+      </p>
+    </div>
   </div>
-
+<div class="container">
   <div class="row">
     <div class="col-md-4">
       <h2>Solves world hunger</h2>
@@ -34,4 +38,5 @@
       <p>Bloccit will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira.</p>
     </div>
   </div>
+</div>
 <% end %>

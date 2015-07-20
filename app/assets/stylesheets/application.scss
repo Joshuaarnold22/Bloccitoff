@@ -17,6 +17,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ body {
+   height: 100%;
+   background-color: #375982;
+ }
+ body {
+   color: black;
+   text-align: left;
+ }
+
  .user-info {
   margin-top: 9px;
  }
@@ -25,10 +34,48 @@
   margin-top: 5px;
  }
 
- .btn-hover {
-    background: #33a6cc;
-}
-
 .half-tone {
   color: #eee;
+}
+
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.media-heading {
+  color: white;
+}
+
+.js-items-count {
+  color: white;
+}
+
+.navbar .nav > li > a {
+    text-decoration: none;
+    color:  white;
+}
+
+.navbar .nav > li > a:hover {
+    color:  black;
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color: white !important;
+}
+
+h2, p {
+  color: white;
+}
+
+.jumbotron {
+  h1, p {
+    color: white;
+  }
+  background: #000 url(checklist.jpeg) center right;
+  background-size: cover;
 }

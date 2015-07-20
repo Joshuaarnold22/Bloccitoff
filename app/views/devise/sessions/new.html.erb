@@ -1,3 +1,4 @@
+<div class="container">
 <h2>Sign in</h2>
 
 <div class="row">
@@ -5,24 +6,25 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group">
-        <%= f.label :email %>
+        <p><%= f.label :email %></p>
         <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
       </div>
       <div class="form-group">
-        <%= f.label :password %>
+        <p><%= f.label :password %></p>
         <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
       </div>
       <div class="form-group">
         <% if devise_mapping.rememberable? %>
-          <%= f.label :remember_me, class: 'checkbox' do %>
+          <p><%= f.label :remember_me, class: 'checkbox' do %>
             <%= f.check_box :remember_me %> Remember me
-          <% end %>
+          <% end %></p>
         <% end %>
         <%= f.submit "Sign in", class: 'btn btn-success' %>
       </div>
-      <div class="form-group">
+      <div class="form-group pull-right">
         <%= render "devise/shared/links" %>
       </div>
     <% end %>
   </div>
+</div>
 </div>
