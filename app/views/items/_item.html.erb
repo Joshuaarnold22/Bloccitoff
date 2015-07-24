@@ -1,4 +1,4 @@
 <li class="list-group-item" style="cursor: pointer;" id=<%="item-#{item.id}"%> >
     <%= link_to "", user_item_path(current_user, item), method: :delete, class: "glyphicon glyphicon-ok", remote: true, data: { confirm: "This task better be done...." }%>
-    <%= link_to item.name %><n class="half-tone"> - <%= item.days_left %> days left - </n>
+    <%= link_to item.name, edit_user_item_path(current_user, item) %><n class="half-tone"> - <%= item.days_left %> days left - </n>
 </li>

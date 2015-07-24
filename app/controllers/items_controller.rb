@@ -12,7 +12,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
   end
 
   def update
